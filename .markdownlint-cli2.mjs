@@ -9,6 +9,7 @@ const config = {
             line_length: 100
         },
         "single-h1": false,
+        "no-inline-html": false,
 
         // part of the markdownlint-rule-relative-links plugin
         "relative-links": true
