@@ -5,7 +5,12 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "prettier:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
+    "prettier:write": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+    "test": "yarn run prettier:write && yarn run markdownlint-cli2 --fix",
+    "test-check": "yarn run prettier:check && yarn run markdownlint-cli2 --config .markdownlint-cli2.mjs",
+    "lint:markdown": "markdownlint-cli2"
   },
   "dependencies": {
     "next": "^15.2.0",
@@ -16,13 +21,17 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.7",
+    "@trivago/prettier-plugin-sort-imports": "^5.0.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.13.4",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "markdownlint-rule-relative-links": "^4.0.1",
     "eslint": "^8",
     "eslint-config-next": "15.1.7",
+    "markdownlint-cli2": "^0.14.0",
     "postcss": "^8.5.3",
+    "prettier": "^3.1.0",
     "tailwindcss": "^4.0.7",
     "typescript": "^5.7.3"
   }

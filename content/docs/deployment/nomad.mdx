@@ -2,11 +2,14 @@
 title: Nomad
 ---
 
+# Nomad
+
 This section describes how to deploy Bracket (frontend and backend) to
 [Nomad](https://www.nomadproject.io).
 
 First, make sure you have a running Nomad cluster. See the
-[production deployment guide](https://developer.hashicorp.com/nomad/tutorials/enterprise/production-deployment-guide-vm-with-consul) on how to achieve that.
+[production deployment guide](https://developer.hashicorp.com/nomad/tutorials/enterprise/production-deployment-guide-vm-with-consul) {/*<!-- markdownlint-disable-line -->*/}
+on how to achieve that.
 
 Then, you can use the following files describing the tasks for the backend and frontend.
 
@@ -32,7 +35,7 @@ job "bracket-backend" {
 
     task "api" {
       driver = "docker"
-      
+
       env {
         ENVIRONMENT = "PRODUCTION"
         PG_DSN = "postgresql://bracket_prod:bracket_prod@postgres:5432/bracket_prod"
@@ -84,7 +87,7 @@ job "bracket-frontend" {
 
     task "api" {
       driver = "docker"
-      
+
       env {
         NEXT_PUBLIC_API_BASE_URL = "https://my.bracketdomain.com"
         NEXT_PUBLIC_HCAPTCHA_SITE_KEY = "xxxxx"
